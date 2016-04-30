@@ -30,6 +30,8 @@ import os, sys
 import threading
 import datetime
 
+from transitions.extensions import HierarchicalMachine as Machine
+
 from janitoo.thread import JNTBusThread, BaseThread
 from janitoo.options import get_option_autostart
 from janitoo.utils import HADD
@@ -98,6 +100,47 @@ def make_audiostream(**kwargs):
 class LapinooBus(JNTBus):
     """A bus to manage Lapinoo
     """
+
+    states = [ 'sleeping',
+               { 'name': 'listening',
+                 'children': ['quiet', 'awake']
+               }
+               { 'name': 'waiting',
+                 'children': ['proximity', 'command']
+               }
+            ]
+    """The lapinoo states :
+        - sleeping : lapinoo does nothing
+        - listening : will listen for a sound, a proximity event
+            - awake : leds are on, ears can move, ...
+            - quiet : no activity detected after a delay, so please stayt quiet
+        - waiting : an event has been detected, wait for more events ... or nothing
+            - proximity :
+        """
+#~ states = ['standing', 'walking', {'name': 'caffeinated', 'children':['dithering', 'running']}]
+#~ transitions = [
+  #~ ['walk', 'standing', 'walking'],
+  #~ ['stop', 'walking', 'standing'],
+  #~ ['drink', '*', 'caffeinated_dithering'],
+  #~ ['walk', 'caffeinated_dithering', 'caffeinated_running'],
+  #~ ['relax', 'caffeinated', 'standing']
+#~ ]
+#~
+#~ machine = GraphMachine(model=Matter(),
+                         #~ states=states,
+                         #~ transitions=transitions,
+                         #~ auto_transitions=False,
+                         #~ initial='standing',
+                         #~ title="Mood Matrix")
+    #~ transitions = [
+      #~ ['walk', 'standing', 'walking'],
+      #~ ['stop', 'walking', 'standing'],
+      #~ ['drink', '*', 'caffeinated'],
+      #~ ['walk', 'caffeinated_dithering', 'caffeinated_running'],
+      #~ ['relax', 'caffeinated', 'standing']
+    #~ ]
+#~ machine = Machine(states=states, transitions=transitions, initial='standing', ignore_invalid_triggers=True)
+
     def __init__(self, **kwargs):
         """
         """
