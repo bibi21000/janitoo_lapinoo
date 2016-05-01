@@ -104,10 +104,10 @@ class LapinooBus(JNTBus):
     states = [ 'sleeping',
                { 'name': 'listening',
                  'children': ['quiet', 'awake']
-               }
+               },
                { 'name': 'waiting',
                  'children': ['proximity', 'command']
-               }
+               },
             ]
     """The lapinoo states :
         - sleeping : lapinoo does nothing
