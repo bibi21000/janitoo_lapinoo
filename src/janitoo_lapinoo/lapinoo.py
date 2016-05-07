@@ -53,6 +53,8 @@ from janitoo_raspberry_i2c_vcnl40xx.vcnl40xx import VCLN4010Component
 from janitoo_raspberry_i2c_ds1307.ds1307 import DS1307Component
 from janitoo_raspberry_gpio.gpio import GpioBus, OutputComponent, RGBComponent
 
+from janitoo_lapinoo.thread_lapinoo import OID
+
 ##############################################################
 #Check that we are in sync with the official command classes
 #Must be implemented for non-regression
@@ -152,7 +154,7 @@ class LapinooBus(JNTBus):
         self.buses['i2cbus'] = I2CBus(masters=[self], **kwargs)
         self._lapinoo_lock =  threading.Lock()
         self.check_timer = None
-        uuid="timer_delay"
+        uuid="%s_timer_delay"%OID
         self.values[uuid] = self.value_factory['config_integer'](options=self.options, uuid=uuid,
             node_uuid=self.uuid,
             help='The delay between 2 checks',
@@ -174,7 +176,7 @@ class LapinooBus(JNTBus):
         """
         self.stop_check()
         if self.check_timer is None and self.is_started:
-            self.check_timer = threading.Timer(self.values['timer_delay'].data, self.on_check)
+            self.check_timer = threading.Timer(self.values["%s_timer_delay"%OID].data, self.on_check)
             self.check_timer.start()
         state = True
         #~ if self.nodeman.is_started:
