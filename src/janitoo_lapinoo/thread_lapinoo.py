@@ -48,8 +48,10 @@ COMMAND_CONTROLLER = 0x1050
 assert(COMMAND_DESC[COMMAND_CONTROLLER] == 'COMMAND_CONTROLLER')
 ##############################################################
 
-def make_thread(options):
-    if get_option_autostart(options, 'lapinoo') == True:
+OID = "lapinoo"
+
+def make_thread(options, force=False):
+    if get_option_autostart(options, OID) == True or force:
         return LapinooThread(options)
     else:
         return None
@@ -62,6 +64,6 @@ class LapinooThread(JNTBusThread):
         """Build the bus
         """
         from janitoo_lapinoo.lapinoo import LapinooBus
-        self.section = 'lapinoo'
+        self.section = ID
         self.bus = LapinooBus(options=self.options, oid=self.section, product_name="Raspberry lapinoo controller")
 
