@@ -64,6 +64,6 @@ class LapinooThread(JNTBusThread):
         """Build the bus
         """
         from janitoo_lapinoo.lapinoo import LapinooBus
-        self.section = ID
+        self.section = OID
         self.bus = LapinooBus(options=self.options, oid=self.section, product_name="Raspberry lapinoo controller")
 
