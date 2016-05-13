@@ -1,0 +1,38 @@
+janitoo_lapinoo package
+=======================
+
+Submodules
+----------
+
+janitoo_lapinoo.lapinoo module
+------------------------------
+
+.. automodule:: janitoo_lapinoo.lapinoo
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+janitoo_lapinoo.server module
+-----------------------------
+
+.. automodule:: janitoo_lapinoo.server
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+janitoo_lapinoo.thread_lapinoo module
+-------------------------------------
+
+.. automodule:: janitoo_lapinoo.thread_lapinoo
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: janitoo_lapinoo
+    :members:
+    :undoc-members:
+    :show-inheritance:

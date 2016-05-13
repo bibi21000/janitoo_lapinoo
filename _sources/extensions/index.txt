@@ -1,0 +1,27 @@
+janitoo_lapinoo package
+=======================
+
+Show janitoo's extensions.
+
+Core extensions
+---------------
+
+Threads
+^^^^^^^
+
+ - lapinoo (janitoo_lapinoo.thread_lapinoo:make_thread)
+
+Components
+^^^^^^^^^^
+
+ - lapinoo.screen (janitoo_lapinoo.lapinoo:make_screen)
+ - lapinoo.rtc (janitoo_lapinoo.lapinoo:make_rtc)
+ - lapinoo.videostream (janitoo_lapinoo.lapinoo:make_videostream)
+ - lapinoo.proximity (janitoo_lapinoo.lapinoo:make_proximity)
+ - lapinoo.video (janitoo_lapinoo.lapinoo:make_video)
+ - lapinoo.audiostream (janitoo_lapinoo.lapinoo:make_audiostream)
+ - lapinoo.photo (janitoo_lapinoo.lapinoo:make_photo)
+ - lapinoo.ambiance (janitoo_lapinoo.lapinoo:make_ambiance)
+ - lapinoo.rfid (janitoo_lapinoo.lapinoo:make_rfid)
+ - lapinoo.led (janitoo_lapinoo.lapinoo:make_led)
+

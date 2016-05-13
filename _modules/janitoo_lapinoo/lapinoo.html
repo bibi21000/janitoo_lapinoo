@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>janitoo_lapinoo.lapinoo &mdash; janitoo_lapinoo 0.0.7 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/united/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0.7',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="janitoo_lapinoo 0.0.7 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          janitoo_lapinoo</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.0.7</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../../tools/index.html">Tools</a></li>
+                <li><a href="../../api/index.html">Reference</a></li>
+                <li><a href="../../extensions/index.html">Janitoo extensions</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="simple">
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <h1>Source code for janitoo_lapinoo.lapinoo</h1><div class="highlight"><pre>
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;The Raspberry lapinoo</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__license__</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span>
+<span class="s">    This file is part of Janitoo.</span>
+
+<span class="s">    Janitoo is free software: you can redistribute it and/or modify</span>
+<span class="s">    it under the terms of the GNU General Public License as published by</span>
+<span class="s">    the Free Software Foundation, either version 3 of the License, or</span>
+<span class="s">    (at your option) any later version.</span>
+
+<span class="s">    Janitoo is distributed in the hope that it will be useful,</span>
+<span class="s">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="s">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="s">    GNU General Public License for more details.</span>
+
+<span class="s">    You should have received a copy of the GNU General Public License</span>
+<span class="s">    along with Janitoo. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+
+<span class="s">&quot;&quot;&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s">&#39;Sébastien GALLET aka bibi21000&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s">&#39;bibi21000@gmail.com&#39;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s">&quot;Copyright © 2013-2014-2015-2016 Sébastien GALLET aka bibi21000&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="kn">from</span> <span class="nn">transitions.extensions</span> <span class="kn">import</span> <span class="n">HierarchicalMachine</span> <span class="k">as</span> <span class="n">Machine</span>
+
+<span class="kn">from</span> <span class="nn">janitoo.thread</span> <span class="kn">import</span> <span class="n">JNTBusThread</span><span class="p">,</span> <span class="n">BaseThread</span>
+<span class="kn">from</span> <span class="nn">janitoo.options</span> <span class="kn">import</span> <span class="n">get_option_autostart</span>
+<span class="kn">from</span> <span class="nn">janitoo.utils</span> <span class="kn">import</span> <span class="n">HADD</span>
+<span class="kn">from</span> <span class="nn">janitoo.node</span> <span class="kn">import</span> <span class="n">JNTNode</span>
+<span class="kn">from</span> <span class="nn">janitoo.value</span> <span class="kn">import</span> <span class="n">JNTValue</span>
+<span class="kn">from</span> <span class="nn">janitoo.component</span> <span class="kn">import</span> <span class="n">JNTComponent</span>
+<span class="kn">from</span> <span class="nn">janitoo.bus</span> <span class="kn">import</span> <span class="n">JNTBus</span>
+
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_sound.sound</span> <span class="kn">import</span> <span class="n">SoundBus</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_sound.sound</span> <span class="kn">import</span> <span class="n">InputComponent</span> <span class="k">as</span> <span class="n">SoundInput</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_camera.camera</span> <span class="kn">import</span> <span class="n">CameraBus</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_camera.camera</span> <span class="kn">import</span> <span class="n">CameraPhoto</span><span class="p">,</span> <span class="n">CameraVideo</span><span class="p">,</span> <span class="n">CameraStream</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_dht.dht</span> <span class="kn">import</span> <span class="n">DHTComponent</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_spi.bus_spi</span> <span class="kn">import</span> <span class="n">SPIBus</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_spi_ili9341.ili9341</span> <span class="kn">import</span> <span class="n">ScreenComponent</span> <span class="k">as</span> <span class="n">IliScreenComponent</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_spi_pn532.pn532</span> <span class="kn">import</span> <span class="n">PN532Component</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_i2c.bus_i2c</span> <span class="kn">import</span> <span class="n">I2CBus</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_i2c_vcnl40xx.vcnl40xx</span> <span class="kn">import</span> <span class="n">VCLN4010Component</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_i2c_ds1307.ds1307</span> <span class="kn">import</span> <span class="n">DS1307Component</span>
+<span class="kn">from</span> <span class="nn">janitoo_raspberry_gpio.gpio</span> <span class="kn">import</span> <span class="n">GpioBus</span><span class="p">,</span> <span class="n">OutputComponent</span><span class="p">,</span> <span class="n">RGBComponent</span>
+
+<span class="kn">from</span> <span class="nn">janitoo_lapinoo.thread_lapinoo</span> <span class="kn">import</span> <span class="n">OID</span>
+
+<span class="c">##############################################################</span>
+<span class="c">#Check that we are in sync with the official command classes</span>
+<span class="c">#Must be implemented for non-regression</span>
+<span class="kn">from</span> <span class="nn">janitoo.classes</span> <span class="kn">import</span> <span class="n">COMMAND_DESC</span>
+
+<span class="n">COMMAND_WEB_CONTROLLER</span> <span class="o">=</span> <span class="mh">0x1030</span>
+<span class="n">COMMAND_WEB_RESOURCE</span> <span class="o">=</span> <span class="mh">0x1031</span>
+<span class="n">COMMAND_DOC_RESOURCE</span> <span class="o">=</span> <span class="mh">0x1032</span>
+
+<span class="k">assert</span><span class="p">(</span><span class="n">COMMAND_DESC</span><span class="p">[</span><span class="n">COMMAND_WEB_CONTROLLER</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;COMMAND_WEB_CONTROLLER&#39;</span><span class="p">)</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">COMMAND_DESC</span><span class="p">[</span><span class="n">COMMAND_WEB_RESOURCE</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;COMMAND_WEB_RESOURCE&#39;</span><span class="p">)</span>
+<span class="k">assert</span><span class="p">(</span><span class="n">COMMAND_DESC</span><span class="p">[</span><span class="n">COMMAND_DOC_RESOURCE</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;COMMAND_DOC_RESOURCE&#39;</span><span class="p">)</span>
+<span class="c">##############################################################</span>
+
+<div class="viewcode-block" id="make_ambiance"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_ambiance">[docs]</a><span class="k">def</span> <span class="nf">make_ambiance</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">AmbianceComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_screen"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_screen">[docs]</a><span class="k">def</span> <span class="nf">make_screen</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ScreenComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_led"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_led">[docs]</a><span class="k">def</span> <span class="nf">make_led</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">LedComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_proximity"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_proximity">[docs]</a><span class="k">def</span> <span class="nf">make_proximity</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ProximityComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_rfid"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_rfid">[docs]</a><span class="k">def</span> <span class="nf">make_rfid</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">RfidComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_rtc"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_rtc">[docs]</a><span class="k">def</span> <span class="nf">make_rtc</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">RtcComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_photo"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_photo">[docs]</a><span class="k">def</span> <span class="nf">make_photo</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">PhotoComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_video"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_video">[docs]</a><span class="k">def</span> <span class="nf">make_video</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">VideoComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_videostream"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_videostream">[docs]</a><span class="k">def</span> <span class="nf">make_videostream</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">VideoStreamComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="make_audiostream"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.make_audiostream">[docs]</a><span class="k">def</span> <span class="nf">make_audiostream</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">AudioStreamComponent</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="LapinooBus"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus">[docs]</a><span class="k">class</span> <span class="nc">LapinooBus</span><span class="p">(</span><span class="n">JNTBus</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A bus to manage Lapinoo</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span> <span class="s">&#39;sleeping&#39;</span><span class="p">,</span>
+               <span class="p">{</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;listening&#39;</span><span class="p">,</span>
+                 <span class="s">&#39;children&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;quiet&#39;</span><span class="p">,</span> <span class="s">&#39;awake&#39;</span><span class="p">]</span>
+               <span class="p">},</span>
+               <span class="p">{</span> <span class="s">&#39;name&#39;</span><span class="p">:</span> <span class="s">&#39;waiting&#39;</span><span class="p">,</span>
+                 <span class="s">&#39;children&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;proximity&#39;</span><span class="p">,</span> <span class="s">&#39;command&#39;</span><span class="p">]</span>
+               <span class="p">},</span>
+            <span class="p">]</span>
+    <span class="sd">&quot;&quot;&quot;The lapinoo states :</span>
+<span class="sd">        - sleeping : lapinoo does nothing</span>
+<span class="sd">        - listening : will listen for a sound, a proximity event</span>
+<span class="sd">            - awake : leds are on, ears can move, ...</span>
+<span class="sd">            - quiet : no activity detected after a delay, so please stayt quiet</span>
+<span class="sd">        - waiting : an event has been detected, wait for more events ... or nothing</span>
+<span class="sd">            - proximity :</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+<span class="c">#~ states = [&#39;standing&#39;, &#39;walking&#39;, {&#39;name&#39;: &#39;caffeinated&#39;, &#39;children&#39;:[&#39;dithering&#39;, &#39;running&#39;]}]</span>
+<span class="c">#~ transitions = [</span>
+  <span class="c">#~ [&#39;walk&#39;, &#39;standing&#39;, &#39;walking&#39;],</span>
+  <span class="c">#~ [&#39;stop&#39;, &#39;walking&#39;, &#39;standing&#39;],</span>
+  <span class="c">#~ [&#39;drink&#39;, &#39;*&#39;, &#39;caffeinated_dithering&#39;],</span>
+  <span class="c">#~ [&#39;walk&#39;, &#39;caffeinated_dithering&#39;, &#39;caffeinated_running&#39;],</span>
+  <span class="c">#~ [&#39;relax&#39;, &#39;caffeinated&#39;, &#39;standing&#39;]</span>
+<span class="c">#~ ]</span>
+<span class="c">#~</span>
+<span class="c">#~ machine = GraphMachine(model=Matter(),</span>
+                         <span class="c">#~ states=states,</span>
+                         <span class="c">#~ transitions=transitions,</span>
+                         <span class="c">#~ auto_transitions=False,</span>
+                         <span class="c">#~ initial=&#39;standing&#39;,</span>
+                         <span class="c">#~ title=&quot;Mood Matrix&quot;)</span>
+    <span class="c">#~ transitions = [</span>
+      <span class="c">#~ [&#39;walk&#39;, &#39;standing&#39;, &#39;walking&#39;],</span>
+      <span class="c">#~ [&#39;stop&#39;, &#39;walking&#39;, &#39;standing&#39;],</span>
+      <span class="c">#~ [&#39;drink&#39;, &#39;*&#39;, &#39;caffeinated&#39;],</span>
+      <span class="c">#~ [&#39;walk&#39;, &#39;caffeinated_dithering&#39;, &#39;caffeinated_running&#39;],</span>
+      <span class="c">#~ [&#39;relax&#39;, &#39;caffeinated&#39;, &#39;standing&#39;]</span>
+    <span class="c">#~ ]</span>
+<span class="c">#~ machine = Machine(states=states, transitions=transitions, initial=&#39;standing&#39;, ignore_invalid_triggers=True)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">JNTBus</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buses</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="s">&#39;camera&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">CameraBus</span><span class="p">(</span><span class="n">masters</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="s">&#39;gpiobus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">GpioBus</span><span class="p">(</span><span class="n">masters</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="s">&#39;spibus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">SPIBus</span><span class="p">(</span><span class="n">masters</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="s">&#39;i2cbus&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">I2CBus</span><span class="p">(</span><span class="n">masters</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lapinoo_lock</span> <span class="o">=</span>  <span class="n">threading</span><span class="o">.</span><span class="n">Lock</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">_timer_delay&quot;</span><span class="o">%</span><span class="n">OID</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">uuid</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">value_factory</span><span class="p">[</span><span class="s">&#39;config_integer&#39;</span><span class="p">](</span><span class="n">options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">uuid</span><span class="p">,</span>
+            <span class="n">node_uuid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span>
+            <span class="n">help</span><span class="o">=</span><span class="s">&#39;The delay between 2 checks&#39;</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s">&#39;Timer.&#39;</span><span class="p">,</span>
+            <span class="n">default</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="LapinooBus.stop_check"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.stop_check">[docs]</a>    <span class="k">def</span> <span class="nf">stop_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that the component is &#39;available&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span><span class="o">.</span><span class="n">cancel</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span> <span class="o">=</span> <span class="bp">None</span>
+</div>
+<div class="viewcode-block" id="LapinooBus.on_check"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.on_check">[docs]</a>    <span class="k">def</span> <span class="nf">on_check</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Make a check using a timer.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_check</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_started</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s">&quot;</span><span class="si">%s</span><span class="s">_timer_delay&quot;</span><span class="o">%</span><span class="n">OID</span><span class="p">]</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_check</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_timer</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="c">#~ if self.nodeman.is_started:</span>
+            <span class="c">#~ #Check the state of some &quot;importants sensors</span>
+            <span class="c">#~ try:</span>
+                <span class="c">#~ temp1 = self.nodeman.find_value(&#39;surftemp&#39;, &#39;temperature&#39;)</span>
+                <span class="c">#~ if temp1 is None or temp1.data is None:</span>
+                    <span class="c">#~ logger.warning(&#39;temp1 problemm&#39;)</span>
+                <span class="c">#~ temp2 = self.nodeman.find_value(&#39;deeptemp&#39;, &#39;temperature&#39;)</span>
+                <span class="c">#~ if temp2 is None or temp2.data is None:</span>
+                    <span class="c">#~ logger.warning(&#39;temp2 problem&#39;)</span>
+            <span class="c">#~ except:</span>
+                <span class="c">#~ logger.exception(&quot;[%s] - Error in on_check&quot;, self.__class__.__name__)</span>
+        <span class="c">#~ if self.nodeman.is_started:</span>
+            <span class="c">#~ #Update the cycles</span>
+            <span class="c">#~ try:</span>
+                <span class="c">#~ moon = self.nodeman.find_value(&#39;moon&#39;, &#39;factor_now&#39;)</span>
+                <span class="c">#~ moonled = self.nodeman.find_value(&#39;ledmoon&#39;, &#39;level&#39;)</span>
+                <span class="c">#~ max_moonled = self.nodeman.find_value(&#39;ledmoon&#39;, &#39;max_level&#39;)</span>
+                <span class="c">#~ moonled.data = int(max_moonled.data * moon.data)</span>
+                <span class="c">#~ sun = self.nodeman.find_value(&#39;sun&#39;, &#39;factor_now&#39;)</span>
+                <span class="c">#~ sunled = self.nodeman.find_value(&#39;ledsun&#39;, &#39;level&#39;)</span>
+                <span class="c">#~ max_sunled = self.nodeman.find_value(&#39;ledsun&#39;, &#39;max_level&#39;)</span>
+                <span class="c">#~ sunled.data = int(max_sunled.data * sun.data)</span>
+            <span class="c">#~ except:</span>
+                <span class="c">#~ logger.exception(&quot;[%s] - Error in on_check&quot;, self.__class__.__name__)</span>
+        <span class="c">#~ if self.nodeman.is_started:</span>
+            <span class="c">#~ #Update the fullsun</span>
+            <span class="c">#~ try:</span>
+                <span class="c">#~ switch = self.nodeman.find_value(&#39;switch_fullsun&#39;, &#39;switch&#39;)</span>
+                <span class="c">#~ sun = self.nodeman.find_value(&#39;sun&#39;, &#39;factor_now&#39;)</span>
+                <span class="c">#~ if sun.data &gt; 0.8:</span>
+                    <span class="c">#~ #Set fullsun on</span>
+                    <span class="c">#~ switch.data = &#39;on&#39;</span>
+                <span class="c">#~ elif sun.data &lt; 0.79:</span>
+                    <span class="c">#~ #Set fullsun off</span>
+                    <span class="c">#~ switch.data = &#39;on&#39;</span>
+            <span class="c">#~ except:</span>
+                <span class="c">#~ logger.exception(&quot;[%s] - Error in on_check&quot;, self.__class__.__name__)</span>
+</div>
+<div class="viewcode-block" id="LapinooBus.start"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.start">[docs]</a>    <span class="k">def</span> <span class="nf">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mqttc</span><span class="p">,</span> <span class="n">trigger_thread_reload_cb</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Start the bus</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="n">bus</span><span class="p">]</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">mqttc</span><span class="p">,</span> <span class="n">trigger_thread_reload_cb</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+        <span class="n">JNTBus</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mqttc</span><span class="p">,</span> <span class="n">trigger_thread_reload_cb</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">on_check</span><span class="p">()</span>
+</div>
+<div class="viewcode-block" id="LapinooBus.stop"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.stop">[docs]</a>    <span class="k">def</span> <span class="nf">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Stop the bus</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stop_check</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="n">bus</span><span class="p">]</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+        <span class="n">JNTBus</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="LapinooBus.check_heartbeat"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.check_heartbeat">[docs]</a>    <span class="k">def</span> <span class="nf">check_heartbeat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Check that the component is &#39;available&#39;</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="c">#~ for bus in self.buses:</span>
+            <span class="c">#~ res = res and self.buses[bus].check_heartbeat()</span>
+        <span class="k">return</span> <span class="n">res</span>
+</div>
+<div class="viewcode-block" id="LapinooBus.loop"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LapinooBus.loop">[docs]</a>    <span class="k">def</span> <span class="nf">loop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopevent</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Retrieve data</span>
+<span class="sd">        Don&#39;t do long task in loop. Use a separated thread to not perturbate the nodeman</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">bus</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buses</span><span class="p">[</span><span class="n">bus</span><span class="p">]</span><span class="o">.</span><span class="n">loop</span><span class="p">(</span><span class="n">stopevent</span><span class="p">)</span>
+</div></div>
+<div class="viewcode-block" id="AmbianceComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.AmbianceComponent">[docs]</a><span class="k">class</span> <span class="nc">AmbianceComponent</span><span class="p">(</span><span class="n">DHTComponent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A component for ambiance &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.ambiance&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Ambiance sensor&quot;</span><span class="p">)</span>
+        <span class="n">DHTComponent</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ProximityComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.ProximityComponent">[docs]</a><span class="k">class</span> <span class="nc">ProximityComponent</span><span class="p">(</span><span class="n">VCLN4010Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A component for a DC motor &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.proximity&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Proximity sensor&quot;</span><span class="p">)</span>
+        <span class="n">VCLN4010Component</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="RtcComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.RtcComponent">[docs]</a><span class="k">class</span> <span class="nc">RtcComponent</span><span class="p">(</span><span class="n">DS1307Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A component for RTC &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.rtc&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;RTC clock&quot;</span><span class="p">)</span>
+        <span class="n">DS1307Component</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="LedComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.LedComponent">[docs]</a><span class="k">class</span> <span class="nc">LedComponent</span><span class="p">(</span><span class="n">RGBComponent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A component for a RGB Led (PWM) &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.led&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Heart Led&quot;</span><span class="p">)</span>
+        <span class="n">RGBComponent</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="ScreenComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.ScreenComponent">[docs]</a><span class="k">class</span> <span class="nc">ScreenComponent</span><span class="p">(</span><span class="n">IliScreenComponent</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A timelapse component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.screen&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Screen&quot;</span><span class="p">)</span>
+        <span class="n">IliScreenComponent</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="PhotoComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.PhotoComponent">[docs]</a><span class="k">class</span> <span class="nc">PhotoComponent</span><span class="p">(</span><span class="n">CameraPhoto</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A timelapse component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.photo&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Photo&quot;</span><span class="p">)</span>
+        <span class="n">CameraPhoto</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VideoComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.VideoComponent">[docs]</a><span class="k">class</span> <span class="nc">VideoComponent</span><span class="p">(</span><span class="n">CameraVideo</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A timelapse component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.video&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Video recorder&quot;</span><span class="p">)</span>
+        <span class="n">CameraVideo</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="VideoStreamComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.VideoStreamComponent">[docs]</a><span class="k">class</span> <span class="nc">VideoStreamComponent</span><span class="p">(</span><span class="n">CameraStream</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; A video stream component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.videostream&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Video stream&quot;</span><span class="p">)</span>
+        <span class="n">CameraStream</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="AudioStreamComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.AudioStreamComponent">[docs]</a><span class="k">class</span> <span class="nc">AudioStreamComponent</span><span class="p">(</span><span class="n">SoundInput</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; An audio stream component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.audiostream&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;Audio stream&quot;</span><span class="p">)</span>
+        <span class="n">SoundInput</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span>
+</div>
+<div class="viewcode-block" id="RfidComponent"><a class="viewcode-back" href="../../api/index.html#janitoo_lapinoo.lapinoo.RfidComponent">[docs]</a><span class="k">class</span> <span class="nc">RfidComponent</span><span class="p">(</span><span class="n">PN532Component</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; An RFID component &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oid</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;oid&#39;</span><span class="p">,</span> <span class="s">&#39;lapinoo.rfid&#39;</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&quot;RFID reader/writer&quot;</span><span class="p">)</span>
+        <span class="n">PN532Component</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oid</span><span class="o">=</span><span class="n">oid</span><span class="p">,</span> <span class="n">bus</span><span class="o">=</span><span class="n">bus</span><span class="p">,</span> <span class="n">addr</span><span class="o">=</span><span class="n">addr</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+                <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s">&quot;[</span><span class="si">%s</span><span class="s">] - __init__ node uuid:</span><span class="si">%s</span><span class="s">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__class__</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uuid</span><span class="p">)</span></div>
+</pre></div>
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Sébastien GALLET aka bibi2100 &lt;bibi21000@gmail.com&gt;.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
