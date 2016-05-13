@@ -17,6 +17,10 @@ Lapinoo
 Another raspberry appliance server developped using Janitoo
 
 
+Documentation
+=============
+You can browse online documentation here : https://bibi21000.github.io/janitoo_lapinoo/.
+
 Needs
 =====
 
