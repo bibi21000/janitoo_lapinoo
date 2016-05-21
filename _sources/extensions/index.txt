@@ -1,27 +1,7 @@
-janitoo_lapinoo package
-=======================
+Janitoo's extensions
+====================
 
-Show janitoo's extensions.
+This package contains the following extensions for Janitoo.
 
-Core extensions
----------------
-
-Threads
-^^^^^^^
-
- - lapinoo (janitoo_lapinoo.thread_lapinoo:make_thread)
-
-Components
-^^^^^^^^^^
-
- - lapinoo.screen (janitoo_lapinoo.lapinoo:make_screen)
- - lapinoo.rtc (janitoo_lapinoo.lapinoo:make_rtc)
- - lapinoo.videostream (janitoo_lapinoo.lapinoo:make_videostream)
- - lapinoo.proximity (janitoo_lapinoo.lapinoo:make_proximity)
- - lapinoo.video (janitoo_lapinoo.lapinoo:make_video)
- - lapinoo.audiostream (janitoo_lapinoo.lapinoo:make_audiostream)
- - lapinoo.photo (janitoo_lapinoo.lapinoo:make_photo)
- - lapinoo.ambiance (janitoo_lapinoo.lapinoo:make_ambiance)
- - lapinoo.rfid (janitoo_lapinoo.lapinoo:make_rfid)
- - lapinoo.led (janitoo_lapinoo.lapinoo:make_led)
+.. jnt-extensions::
 
