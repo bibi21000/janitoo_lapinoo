@@ -53,8 +53,6 @@ from janitoo_raspberry_i2c_vcnl40xx.vcnl40xx import VCLN4010Component
 from janitoo_raspberry_i2c_ds1307.ds1307 import DS1307Component
 from janitoo_raspberry_gpio.gpio import GpioBus, OutputComponent, RGBComponent
 
-from janitoo_lapinoo.thread_lapinoo import OID
-
 ##############################################################
 #Check that we are in sync with the official command classes
 #Must be implemented for non-regression
@@ -68,6 +66,8 @@ assert(COMMAND_DESC[COMMAND_WEB_CONTROLLER] == 'COMMAND_WEB_CONTROLLER')
 assert(COMMAND_DESC[COMMAND_WEB_RESOURCE] == 'COMMAND_WEB_RESOURCE')
 assert(COMMAND_DESC[COMMAND_DOC_RESOURCE] == 'COMMAND_DOC_RESOURCE')
 ##############################################################
+
+from janitoo_lapinoo import OID
 
 def make_ambiance(**kwargs):
     return AmbianceComponent(**kwargs)
@@ -256,7 +256,7 @@ class AmbianceComponent(DHTComponent):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.ambiance')
+        oid = kwargs.pop('oid', '%s.ambiance'%OID)
         name = kwargs.pop('name', "Ambiance sensor")
         DHTComponent.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -268,7 +268,7 @@ class ProximityComponent(VCLN4010Component):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.proximity')
+        oid = kwargs.pop('oid', '%s.proximity'%OID)
         name = kwargs.pop('name', "Proximity sensor")
         VCLN4010Component.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -280,7 +280,7 @@ class RtcComponent(DS1307Component):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.rtc')
+        oid = kwargs.pop('oid', '%s.rtc'%OID)
         name = kwargs.pop('name', "RTC clock")
         DS1307Component.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -292,7 +292,7 @@ class LedComponent(RGBComponent):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.led')
+        oid = kwargs.pop('oid', '%s.led'%OID)
         name = kwargs.pop('name', "Heart Led")
         RGBComponent.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -304,7 +304,7 @@ class ScreenComponent(IliScreenComponent):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.screen')
+        oid = kwargs.pop('oid', '%s.screen'%OID)
         name = kwargs.pop('name', "Screen")
         IliScreenComponent.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -316,7 +316,7 @@ class PhotoComponent(CameraPhoto):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.photo')
+        oid = kwargs.pop('oid', '%s.photo'%OID)
         name = kwargs.pop('name', "Photo")
         CameraPhoto.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -328,7 +328,7 @@ class VideoComponent(CameraVideo):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.video')
+        oid = kwargs.pop('oid', '%s.video'%OID)
         name = kwargs.pop('name', "Video recorder")
         CameraVideo.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -340,7 +340,7 @@ class VideoStreamComponent(CameraStream):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.videostream')
+        oid = kwargs.pop('oid', '%s.videostream'%OID)
         name = kwargs.pop('name', "Video stream")
         CameraStream.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -352,7 +352,7 @@ class AudioStreamComponent(SoundInput):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.audiostream')
+        oid = kwargs.pop('oid', '%s.audiostream'%OID)
         name = kwargs.pop('name', "Audio stream")
         SoundInput.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
@@ -364,7 +364,7 @@ class RfidComponent(PN532Component):
     def __init__(self, bus=None, addr=None, **kwargs):
         """
         """
-        oid = kwargs.pop('oid', 'lapinoo.rfid')
+        oid = kwargs.pop('oid', '%s.rfid'%OID)
         name = kwargs.pop('name', "RFID reader/writer")
         PN532Component.__init__(self, oid=oid, bus=bus, addr=addr, name=name,
                 **kwargs)
