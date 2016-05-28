@@ -29,6 +29,10 @@ Documentation
 =============
 You can browse online documentation here : https://bibi21000.github.io/janitoo_lapinoo/.
 
+Tutorial
+========
+You can find a tutorial here : https://bibi21000.github.io/janitoo_tutorial/.
+
 Needs
 =====
 
